@@ -1,117 +1,236 @@
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
-        alternativas: [
-            {
-                texto: "Permite monitorar a saúde e identificar problemas mais cedo.
-                afirmacao: "afirmacao"
-            },
-            {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "afirmacao"
-            }           
-            
-        ]
+        pergunta: "Como a tecnologia pode ajudar na prevenção de doenças?",
+        respostas: [
+            "Monitorando a saúde",
+            "Aumentando o consumo de açúcar",
+            "Diminuindo o tempo de sono",
+            "Evitando consultas médicas"
+        ],
+        correta: 0
     },
+
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
-        alternativas: [
-            {
-                texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:"afirmacao"
-            }
-        ]
+        pergunta: "O que é telemedicina?",
+        respostas: [
+            "Um tipo de remédio",
+            "Atendimento médico realizado à distância",
+            "Um jogo eletrônico",
+            "Uma máquina de exercícios"
+        ],
+        correta: 1
     },
+
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
-        alternativas: [
-            {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
-            }
-            
-        ]
+        pergunta: "Como os aplicativos de saúde podem ajudar?",
+        respostas: [
+            "Acompanhando exercícios e alimentação",
+            "Substituindo todos os médicos",
+            "Causando doenças",
+            "Impedindo atividades físicas"
+        ],
+        correta: 0
     },
+
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
-        alternativas: [
-            {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao:"afirmacao"
-            }
-            
-        ]
+        pergunta: "Como a inteligência artificial pode ajudar na medicina?",
+        respostas: [
+            "Auxiliando na análise de exames",
+            "Eliminando todos os hospitais",
+            "Substituindo todos os médicos",
+            "Impedindo diagnósticos"
+        ],
+        correta: 0
     },
+
     {
-        enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
-        alternativas: [
-            {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"afirmacao"
-            }
-            
-            
-        ]
+        pergunta: "O que um relógio inteligente pode monitorar?",
+        respostas: [
+            "Batimentos cardíacos",
+            "Altura de prédios",
+            "Velocidade de carros",
+            "Temperatura das cidades"
+        ],
+        correta: 0
     },
+
+    {
+        pergunta: "Qual pode ser uma consequência do uso excessivo do celular?",
+        respostas: [
+            "Melhor visão",
+            "Problemas de sono",
+            "Aumento da força física",
+            "Melhor postura"
+        ],
+        correta: 1
+    },
+
+    {
+        pergunta: "Como a tecnologia pode ajudar pessoas com deficiência?",
+        respostas: [
+            "Criando ferramentas de acessibilidade",
+            "Dificultando a comunicação",
+            "Impedindo o acesso à informação",
+            "Eliminando tratamentos"
+        ],
+        correta: 0
+    },
+
+    {
+        pergunta: "A tecnologia pode ajudar na saúde mental?",
+        respostas: [
+            "Não",
+            "Sim, por meio de ferramentas e terapias digitais",
+            "Somente por meio de jogos",
+            "Apenas dentro de hospitais"
+        ],
+        correta: 1
+    },
+
+    {
+        pergunta: "Como robôs podem ser utilizados na medicina?",
+        respostas: [
+            "Auxiliando em procedimentos e cirurgias",
+            "Substituindo todos os médicos",
+            "Controlando o trânsito",
+            "Fabricando alimentos"
+        ],
+        correta: 0
+    },
+
+    {
+        pergunta: "Por que os dados de saúde precisam ser protegidos?",
+        respostas: [
+            "Porque são informações pessoais",
+            "Porque não possuem importância",
+            "Porque servem para jogos",
+            "Porque não podem ser armazenados"
+        ],
+        correta: 0
+    }
 ];
 
-let atual = 0; 
-let perguntaAtual;
-let historiaFinal = "";
 
-function mostraPergunta() {
-    if(atual >= perguntas.length){
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
+let perguntaAtual = 0;
+let pontos = 0;
+
+
+const inicio = document.getElementById("inicio");
+const quiz = document.getElementById("quiz");
+const resultado = document.getElementById("resultado");
+
+const comecar = document.getElementById("comecar");
+const jogarNovamente =
+    document.getElementById("jogarNovamente");
+
+const pergunta =
+    document.getElementById("pergunta");
+
+const alternativas =
+    document.getElementById("alternativas");
+
+const proxima =
+    document.getElementById("proxima");
+
+const contador =
+    document.getElementById("contador");
+
+const pontuacao =
+    document.getElementById("pontuacao");
+
+const progresso =
+    document.getElementById("progresso");
+
+const resultadoPontos =
+    document.getElementById("resultadoPontos");
+
+const tituloResultado =
+    document.getElementById("tituloResultado");
+
+const mensagemResultado =
+    document.getElementById("mensagemResultado");
+
+const resultadoIcone =
+    document.getElementById("resultadoIcone");
+
+
+function trocarTela(tela) {
+
+    document.querySelectorAll(".tela")
+        .forEach(elemento => {
+            elemento.classList.remove("ativa");
+        });
+
+    tela.classList.add("ativa");
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
+
+function iniciarJogo() {
+
+    perguntaAtual = 0;
+
+    pontos = 0;
+
+    pontuacao.textContent = "⭐ 0";
+
+    trocarTela(quiz);
+
+    mostrarPergunta();
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
+
+function mostrarPergunta() {
+
+    const atual = perguntas[perguntaAtual];
+
+    pergunta.textContent = atual.pergunta;
+
+    contador.textContent =
+        `${String(perguntaAtual + 1).padStart(2, "0")} / ${perguntas.length}`;
+
+    const porcentagem =
+        ((perguntaAtual) / perguntas.length) * 100;
+
+    progresso.style.width =
+        `${porcentagem}%`;
+
+    alternativas.innerHTML = "";
+
+    proxima.style.display = "none";
+
+
+    atual.respostas.forEach(
+        (texto, indice) => {
+
+            const botao =
+                document.createElement("button");
+
+            botao.className =
+                "alternativa";
+
+            botao.textContent =
+                texto;
+
+            botao.addEventListener(
+                "click",
+                () => responder(botao, indice)
+            );
+
+            alternativas.appendChild(botao);
+        }
+    );
 }
 
-function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = ""; 
-}
 
-mostraPergunta();
+function responder(botao, indice) {
+
+    const atual =
+        perguntas[perguntaAtual];
+
+    const botoes =
+        document.querySelectorAll(".alternativa");
+
+
+    botoes.forEach(
+<
+...

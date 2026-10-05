@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSaúde - Quiz</title>
     <link rel="stylesheet" href="style.css">
-    <title>Como a tecnologia pode ajudar na prevenção de doenças?</title>
 </head>
+
 <body>
-    <div class="caixa-principal">
-        <h1>futuro da IA<Você decide o /h1>
-        <div class="caixa-perguntas"></div>
-        <div class="caixa-alternativas"></div>
-        <div class="caixa-resultado">
-            <p class="texto-resultado"></p>
-        </div>
-    </div>
+
+    <main class="app">
+
+        <!-- TELA INICIAL -->
+        <section id="inicio" class="tela ativa">
+            <div class="icone">🧠</div>
+
+            <h1>Tech<span>Saúde</span></h1>
+
+            <p class="descricao">
+                Você conhece a relação entre tecnologia e saúde?
+            </p>
+
+            <div class="info">
+                <div>
+                    <strong>10</strong>
+                    <small>Perguntas</small>
+                </div>
+
+                <div>
+                    <strong>🧠</strong>
+                    <small>Conhecimento</small>
+                </div>
+
+                <div>
+                    <strong>🏆</strong>
+                    <small>Pontuação</small>
+                </div>
+            </div>
+
+            <button id="comecar" class="btn principal">
+                COMEÇAR QUIZ 🚀
+            </button>
+        </section>
+
+
+        <!-- TELA DO QUIZ -->
+        <section id="quiz" class="tela">
+
+            <div class="topo">
+                <span id="contador">01 / 10</span>
+
+                <span id="pontuacao">⭐ 0</span>
+            </div>
+
+            <div class="barra">
+                <div id="progresso"></div>
+            </div>
+
+            <p class="categoria">
+                SAÚDE & TECNOLOGIA
+            </p>
+
+            <h2 id="pergunta">
+                Pergunta
+            </h2>
+
+            <div id="alternativas"></div>
+
+            <button id="proxima" class="btn principal">
+                PRÓXIMA ➜
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADO -->
+        <section id="resultado" class="tela">
+
+            <div id="resultadoIcone" class="icone">
+                🏆
+            </div>
+
+            <p class="categoria">
+                RESULTADO FINAL
+            </p>
+
+            <h1 id="tituloResultado">
+                Parabéns!
+            </h1>
+
+            <div class="placar">
+                <span id="resultadoPontos">0</span>
+                <small>/ 10</small>
+            </div>
+
+            <p id="mensagemResultado">
+                Muito bem!
+            </p>
+
+            <button id="jogarNovamente" class="btn principal">
+                JOGAR NOVAMENTE 🔄
+            </button>
+
+        </section>
+
+    </main>
+
     <script src="script.js"></script>
+
 </body>
 </html>
